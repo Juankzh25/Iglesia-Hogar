@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <title>Plaza Real - Revista</title>
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        paper: 'var(--paper-bg)',
+                        paperDark: 'var(--paper-darker)',
+                        ink: 'var(--ink-black)',
+                        inkLight: 'var(--ink-light)',
+                        sepia: 'var(--accent-sepia)'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Manrope', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-paper text-ink selection:bg-ink selection:text-paper">
+
+    <div class="phone-shell bg-paper">
+        
+        <div class="phone-viewport pb-24">
+
+            <!-- VIEW 0: PORTADA (COVER) -->
+            <section id="view-portada" class="app-view">
+                <main class="flex-grow flex flex-col justify-between items-center p-8 text-center select-none min-h-full">
+                    <!-- Top header -->
+                    <div class="w-full pt-6">
+                        <p class="font-sans text-[10px] tracking-[0.2em] uppercase text-inkLight">Edición Semanal</p>
+                        <div class="editorial-divider opacity-20 mt-3 mb-0"></div>
+                    </div>
+
+                    <!-- Logo and Titles -->
+                    <div class="flex flex-col items-center my-auto py-10">
+                        <div class="w-32 h-32 rounded-full border border-ink/10 p-2 mb-8 shadow-sm bg-paperDark flex items-center justify-center">
+                            <img alt="Verbo Logo" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDaWY0Xs24BuzOh07Zb7ghmaP3TW38bKmUTyx_olVzBF15zpAxTxJ91maBwDNwFlOvdYgAg87bEz0WgeHj5GPF0RDJWhx2STYoan2GV7pnAeKTeqYz-rtQ0tG1DoYF_kakTJ2IZ9nOq_KtfHKTC7hOu4KAKlG3K7-9ZUejThO-0UByItv0MnA6RgGvyuHoJBAXrjJc9YB4d1QFnsqbDuO7iYkNOUtbcQFUPf8V3mrQNETOBBDthxDztT_Az2asnSwu5UGZH4CXKfBr">
+                        </div>
+                        <h1 class="font-serif text-5xl font-bold tracking-[0.1em] text-ink uppercase" style="letter-spacing: 0.15em;">Verbo</h1>
+                        <h2 class="font-serif italic text-3xl mt-4 text-[#1d4ed8] tracking-wide font-semibold">Plaza Real</h2>
+                    </div>
+
+                    <!-- Footer / Tap to Open -->
+                    <a href="#/inicio" class="w-full group mt-auto flex flex-col items-center gap-2 pb-6">
+                        <div class="editorial-divider opacity-20 mt-0 mb-4"></div>
+                        <span class="font-sans text-xs tracking-[0.2em] uppercase text-inkLight group-hover:text-ink transition-colors font-medium">Tocar para abrir</span>
+                        <span class="material-symbols-outlined text-ink animate-bounce mt-1">keyboard_double_arrow_right</span>
+                    </a>
+                </main>
+            </section>
+
+            <!-- VIEW 1: INICIO -->
+            <section id="view-inicio" class="app-view">
+                <!-- Editorial Header -->
+                <header class="editorial-header">
+                    <div class="editorial-header-title-row">
+                        <h1 class="editorial-header-title">Verbo</h1>
+                        <button class="editorial-header-bell hover:opacity-70 transition-opacity">
+                            <span class="material-symbols-outlined text-ink" style="font-size: 28px;">notifications</span>
+                        </button>
+                    </div>
+                    <p class="font-sans text-xs uppercase tracking-widest text-inkLight mt-2 text-center">Iglesia Hogar Plaza Real</p>
+                    <div class="editorial-divider-thick mt-6 mb-2"></div>
+                    <div class="editorial-divider mt-0 mb-6" style="height: 1px;"></div>
+                </header>
+
+                <main class="flex-grow px-8 pb-10 relative">
+                    <!-- Intro -->
+                    <div class="mb-10 text-center">
+                        <p class="font-serif italic text-xl text-inkLight leading-relaxed">
+                            "Un lugar de paz, comunión y crecimiento espiritual."
+                        </p>
+                    </div>
+
+                    <!-- Editorial Index List (Table of Contents Style with Leader Dots and Page Numbers) -->
+                    <nav class="flex flex-col gap-4 mt-6">
+                        
+                        <a href="#/servicio-domingo" class="index-item group">
+                            <div class="index-item-text">
+                                <span class="font-serif text-lg text-ink group-hover:text-sepia transition-colors">I. Servicio Domingo</span>
+                                <span class="font-sans text-[10px] tracking-widest text-inkLight uppercase mt-0.5">Anfitriones & Anuncios</span>
+                            </div>
+                            <span class="index-item-dots"></span>
+                            <span class="index-item-page group-hover:text-sepia transition-colors">Pág. 03</span>
+                        </a>
+                        
+                        <a href="#/servicio-martes" class="index-item group">
+                            <div class="index-item-text">
+                                <span class="font-serif text-lg text-ink group-hover:text-sepia transition-colors">II. Servicio Martes</span>
+                                <span class="font-sans text-[10px] tracking-widest text-inkLight uppercase mt-0.5">Refrigerio & Ministrar</span>
+                            </div>
+                            <span class="index-item-dots"></span>
+                            <span class="index-item-page group-hover:text-sepia transition-colors">Pág. 05</span>
+                        </a>
+
+                        <div class="editorial-divider opacity-10 my-1"></div>
+                        
+                        <a href="#/lista-de-refrigerio" class="index-item group">
+                            <span class="font-serif text-base text-ink group-hover:text-sepia transition-colors">Refrigerio</span>
+                            <span class="index-item-dots"></span>
+                            <span class="index-item-page group-hover:text-sepia transition-colors">Pág. 07</span>
+                        </a>
+                        
+                        <a href="#/anuncios" class="index-item group">
+                            <span class="font-serif text-base text-ink group-hover:text-sepia transition-colors">Anuncios</span>
+                            <span class="index-item-dots"></span>
+                            <span class="index-item-page group-hover:text-sepia transition-colors">Pág. 09</span>
+                        </a>
+                        
+                        <a href="#/actividades" class="index-item group">
+                            <span class="font-serif text-base text-ink group-hover:text-sepia transition-colors">Actividades</span>
+                            <span class="index-item-dots"></span>
+                            <span class="index-item-page group-hover:text-sepia transition-colors">Pág. 11</span>
+                        </a>
+                        
+                        <a href="#/cumpleanos" class="index-item group">
+                            <span class="font-serif text-base text-ink group-hover:text-sepia transition-colors">Cumpleaños</span>
+                            <span class="index-item-dots"></span>
+                            <span class="index-item-page group-hover:text-sepia transition-colors">Pág. 13</span>
+                        </a>
+
+                        <a href="#/recreacion-infantil" class="index-item group">
+                            <span class="font-serif text-base text-ink group-hover:text-sepia transition-colors">Recreación Infantil</span>
+                            <span class="index-item-dots"></span>
+                            <span class="index-item-page group-hover:text-sepia transition-colors">Pág. 15</span>
+                        </a>
+                        
+                        <div class="editorial-divider opacity-10 my-1"></div>
+
+                        <a href="#/versiculos-de-viernes" class="index-item group">
+                            <span class="font-serif italic text-base text-ink group-hover:text-sepia transition-colors">Reflexiones de Viernes</span>
+                            <span class="index-item-dots"></span>
+                            <span class="index-item-page group-hover:text-sepia transition-colors">Pág. 17</span>
+                        </a>
+
+                    </nav>
+                </main>
+            </section>
+
+            <!-- VIEW 2: SERVICIO DOMINGO -->
+            <section id="view-servicio-domingo" class="app-view">
+                <header class="w-full pt-10 pb-4 px-6 flex items-center justify-between relative">
+                    <a href="#/inicio" aria-label="Back" class="w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity">
+                        <span class="material-symbols-outlined text-ink" style="font-size: 24px;">arrow_back</span>
+                    </a>
+                    <h1 class="font-serif text-xl font-bold tracking-widest text-ink uppercase flex items-center gap-2" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <span class="material-symbols-outlined text-ink" style="font-size: 22px;">church</span> Domingo
+                    </h1>
+                    <div class="w-8"></div> <!-- spacer -->
+                </header>
+                <div class="editorial-divider mt-0 mb-6" style="height: 1px;"></div>
+
+                <main class="flex-grow px-8 pb-10 flex flex-col justify-between">
+                    <div class="w-full flex-grow flex flex-col items-center justify-center space-y-6 z-10 relative">
+                        <div class="flex flex-col items-center space-y-3 text-center">
+                            <span class="font-serif italic text-3xl text-ink">El Día del Señor</span>
+                            <div class="editorial-divider w-12 mx-auto my-1"></div>
+                            <p id="domingo-date" class="font-sans text-xs uppercase tracking-widest text-inkLight">Cargando...</p>
+                        </div>
+                        <div class="w-full space-y-6 mt-10">
+                            <!-- Card 1: Anfitrión -->
+                            <div class="w-full text-left">
+                                <h3 class="font-serif text-2xl text-ink">I. Anfitriones</h3>
+                                <p id="domingo-anfitriones" class="font-sans text-base text-inkLight mt-2 italic leading-relaxed">Cargando...</p>
+                                <div class="editorial-divider mt-4 mb-0 opacity-20"></div>
+                            </div>
+                            <!-- Card 2: Anuncios -->
+                            <a href="#/anuncios" class="w-full block text-left group hover:opacity-70 transition-opacity">
+                                <h3 class="font-serif text-2xl text-ink">II. Anuncios</h3>
+                                <p class="font-sans text-sm text-inkLight mt-1 italic">Noticias y eventos de la comunidad.</p>
+                                <div class="editorial-divider mt-4 mb-0 opacity-20"></div>
+                            </a>
+                        </div>
+                    </div>
+                </main>
+            </section>
+
+            <!-- VIEW 3: SERVICIO MARTES -->
+            <section id="view-servicio-martes" class="app-view hidden">
+                <header class="w-full pt-10 pb-4 px-6 flex items-center justify-between relative">
+                    <a href="#/inicio" aria-label="Back" class="w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity">
+                        <span class="material-symbols-outlined text-ink" style="font-size: 24px;">arrow_back</span>
+                    </a>
+                    <h1 class="font-serif text-xl font-bold tracking-widest text-ink uppercase flex items-center gap-2" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <span class="material-symbols-outlined text-ink" style="font-size: 22px;">calendar_month</span> Martes
+                    </h1>
+                    <div class="w-8"></div>
+                </header>
+                <div class="editorial-divider mt-0 mb-6" style="height: 1px;"></div>
+
+                <main class="flex-grow px-8 pb-10 flex flex-col items-center justify-center relative">
+                    <div class="w-full max-w-xs flex flex-col items-center text-center">
+                        <h2 class="font-serif italic text-3xl text-ink mb-2">Comunión y Oración</h2>
+                        <p id="martes-date" class="font-sans text-xs text-inkLight tracking-widest uppercase mt-1">Cargando...</p>
+                        <div class="editorial-divider w-12 mx-auto my-4"></div>
+                        
+                        <div class="w-full space-y-6 mt-8">
+                            <div class="w-full text-center">
+                                <h3 class="font-serif text-2xl text-ink">I. Ministrar</h3>
+                                <p id="martes-ministrar" class="font-sans text-base text-inkLight mt-2 italic leading-relaxed">Cargando...</p>
+                            </div>
+                            <div class="editorial-divider w-full mx-auto my-2 opacity-20"></div>
+                            <div class="w-full text-center">
+                                <h3 class="font-serif text-2xl text-ink">II. Comunidad</h3>
+                                <p class="font-sans text-base text-inkLight mt-2 italic leading-relaxed">Iglesia Hogar Plaza Real</p>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </section>
+
+            <!-- VIEW 4: ANUNCIOS -->
+            <section id="view-anuncios" class="app-view hidden">
+                <header class="w-full pt-10 pb-4 px-6 flex items-center justify-between relative">
+                    <a href="#/inicio" aria-label="Volver al inicio" class="w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity">
+                        <span class="material-symbols-outlined text-ink" style="font-size: 24px;">arrow_back</span>
+                    </a>
+                    <h1 class="font-serif text-xl font-bold tracking-widest text-ink uppercase flex items-center gap-2" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <span class="material-symbols-outlined text-ink" style="font-size: 22px;">campaign</span> Anuncios
+                    </h1>
+                    <div class="w-8"></div>
+                </header>
+                <div class="editorial-divider mt-0 mb-6" style="height: 1px;"></div>
+                
+                <main class="flex-grow py-4 px-8 space-y-12">
+                    <!-- Announcements rendered via app.js -->
+                    <!-- Announcement Card 1 -->
+                    <article class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-4 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="flex justify-between items-start">
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-md text-[10px] uppercase">
+                                Comunidad
+                            </span>
+                            <span class="font-label-md text-[10px] text-on-surface-variant flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[12px]">event</span>
+                                Sábado, 6:00 PM
+                            </span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-primary font-bold text-sm">Reunión de Jóvenes</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed text-xs">
+                            Este sábado a las 6:00 PM nos reuniremos para un tiempo especial de alabanza, palabra y compañerismo. Trae a un amigo, tendremos pizza al final.
+                        </p>
+                        <div class="mt-1">
+                            <button class="font-label-lg text-label-lg text-primary border border-outline-variant rounded-full px-3 py-1 hover:bg-surface-container transition-colors inline-flex items-center gap-1.5 text-xs btn-add-calendar">
+                                <span>Añadir al calendario</span>
+                                <span class="material-symbols-outlined text-[14px]">event_available</span>
+                            </button>
+                        </div>
+                    </article>
+                    <!-- Announcement Card 2 -->
+                    <article class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-4 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="flex justify-between items-start">
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-md text-[10px] uppercase">
+                                Obra Social
+                            </span>
+                            <span class="font-label-md text-[10px] text-on-surface-variant flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[12px]">schedule</span>
+                                Todo el mes
+                            </span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-primary font-bold text-sm">Recolección de Víveres</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed text-xs">
+                            Estaremos recibiendo donaciones para las familias necesitadas. Por favor, traiga alimentos no perecederos al vestíbulo principal después de cada servicio.
+                        </p>
+                    </article>
+                    <!-- Announcement Card 3 -->
+                    <article class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-4 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="flex justify-between items-start">
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-md text-[10px] uppercase">
+                                Ministerios
+                            </span>
+                            <span class="font-label-md text-[10px] text-on-surface-variant flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[12px]">event</span>
+                                Sábado, 10:00 AM
+                            </span>
+                        </div>
+                        <div class="flex flex-col gap-2 mt-1">
+                            <h3 class="font-headline-md text-headline-md text-primary font-bold text-sm">Taller de Alabanza</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed text-xs">
+                                Invitamos a músicos y cantantes a participar en nuestro próximo taller de perfeccionamiento. Abordaremos técnicas vocales y de ensamble.
+                            </p>
+                            <div class="w-full h-24 bg-surface-container rounded-lg overflow-hidden border border-outline-variant/20 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-outline text-[32px]">piano</span>
+                            </div>
+                        </div>
+                    </article>
+                </main>
+            </section>
+
+            <!-- VIEW 5: ACTIVIDADES -->
+            <section id="view-actividades" class="app-view hidden">
+                <header class="w-full pt-10 pb-4 px-6 flex items-center justify-between relative">
+                    <a href="#/inicio" aria-label="Volver" class="w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity">
+                        <span class="material-symbols-outlined text-ink" style="font-size: 24px;">arrow_back</span>
+                    </a>
+                    <h1 class="font-serif text-xl font-bold tracking-widest text-ink uppercase flex items-center gap-2" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <span class="material-symbols-outlined text-ink" style="font-size: 22px;">groups</span> Eventos
+                    </h1>
+                    <div class="w-8"></div>
+                </header>
+                <div class="editorial-divider mt-0 mb-6" style="height: 1px;"></div>
+                <main class="flex-grow py-4 px-8 space-y-12">
+                    <div class="text-center space-y-1">
+                        <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary text-lg">Eventos y Recreación</h2>
+                        <div class="silver-divider my-2"></div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant italic px-2 text-[11px] leading-relaxed">"En todo tiempo ama el amigo..." <br>— Proverbios 17:17</p>
+                    </div>
+                    <div class="space-y-3">
+                        <!-- Activity Item 1 -->
+                        <article class="bg-surface-container-lowest border border-outline-variant rounded-lg p-3 flex flex-col gap-2 shadow-sm group">
+                            <div class="flex items-center justify-between border-b border-outline-variant pb-2">
+                                <span class="font-label-lg text-secondary uppercase tracking-wider text-xs font-semibold">Sábado | Nov 15</span>
+                                <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 10am - 4pm</span>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="font-headline-md text-headline-md text-primary font-bold text-sm">Día de Campo Familiar</h3>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-1 text-xs">
+                                    <span class="material-symbols-outlined text-[14px] text-outline">location_on</span> Parque Centenario
+                                </p>
+                            </div>
+                            <button class="w-full py-1.5 mt-1 bg-transparent border border-outline-variant text-primary rounded-full text-xs font-semibold hover:bg-surface-container-low transition-colors btn-activity-details">
+                                Ver Detalles
+                            </button>
+                        </article>
+                        <!-- Activity Item 2 -->
+                        <article class="bg-surface-container-lowest border border-outline-variant rounded-lg p-3 flex flex-col gap-2 shadow-sm group">
+                            <div class="flex items-center justify-between border-b border-outline-variant pb-2">
+                                <span class="font-label-lg text-secondary uppercase tracking-wider text-xs font-semibold">Sábado | Nov 22</span>
+                                <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 8am - 1pm</span>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="font-headline-md text-headline-md text-primary font-bold text-sm">Torneo de Fútbol</h3>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-1 text-xs">
+                                    <span class="material-symbols-outlined text-[14px] text-outline">location_on</span> Canchas Deportivas Norte
+                                </p>
+                            </div>
+                            <button class="w-full py-1.5 mt-1 bg-transparent border border-outline-variant text-primary rounded-full text-xs font-semibold hover:bg-surface-container-low transition-colors btn-activity-details">
+                                Ver Detalles
+                            </button>
+                        </article>
+                        <!-- Activity Item 3 -->
+                        <article class="bg-surface-container-lowest border border-outline-variant rounded-lg p-3 flex flex-col gap-2 shadow-sm group">
+                            <div class="flex items-center justify-between border-b border-outline-variant pb-2">
+                                <span class="font-label-lg text-secondary uppercase tracking-wider text-xs font-semibold">Viernes | Dic 5</span>
+                                <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 7pm - 9:30pm</span>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="font-headline-md text-headline-md text-primary font-bold text-sm">Noche de Cine Cristiano</h3>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-1 text-xs">
+                                    <span class="material-symbols-outlined text-[14px] text-outline">location_on</span> Salón Principal de la Iglesia
+                                </p>
+                            </div>
+                            <button class="w-full py-1.5 mt-1 bg-transparent border border-outline-variant text-primary rounded-full text-xs font-semibold hover:bg-surface-container-low transition-colors btn-activity-details">
+                                Ver Detalles
+                            </button>
+                        </article>
+                    </div>
+                </main>
+            </section>
+
+            <!-- VIEW 6: LISTA DE REFRIGERIO -->
+            <section id="view-lista-de-refrigerio" class="app-view hidden">
+                <header class="w-full pt-10 pb-4 px-6 flex items-center justify-between relative">
+                    <a href="#/inicio" aria-label="Volver" class="w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity">
+                        <span class="material-symbols-outlined text-ink" style="font-size: 24px;">arrow_back</span>
+                    </a>
+                    <h1 class="font-serif text-xl font-bold tracking-widest text-ink uppercase flex items-center gap-2" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <span class="material-symbols-outlined text-ink" style="font-size: 22px;">restaurant</span> Refrigerio
+                    </h1>
+                    <div class="w-8"></div>
+                </header>
+                <div class="editorial-divider mt-0 mb-6" style="height: 1px;"></div>
+                <main class="flex-grow py-4 px-8 space-y-10">
+                    <p class="font-body-sm text-body-sm text-on-surface-variant text-center max-w-xs mx-auto italic text-[11px]">"No se olviden de hacer el bien y de compartir..." <br> - Hebreos 13:16</p>
+                    <div class="flex flex-col gap-3">
+                        <!-- Card 1 -->
+                        <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 flex items-center justify-between gap-3 shadow-sm">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center shrink-0 border border-outline-variant/50">
+                                    <span class="material-symbols-outlined text-on-surface-variant text-[20px]">calendar_month</span>
+                                </div>
+                                <div>
+                                    <p class="font-label-lg text-on-surface-variant uppercase text-[9px] tracking-wider mb-0.5">Viernes, 24 Octubre</p>
+                                    <h2 class="font-headline-md text-primary-container text-sm font-semibold">Familia Rodriguez</h2>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-[20px] text-secondary">restaurant</span>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 flex items-center justify-between gap-3 shadow-sm">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center shrink-0 border border-outline-variant/50">
+                                    <span class="material-symbols-outlined text-on-surface-variant text-[20px]">calendar_month</span>
+                                </div>
+                                <div>
+                                    <p class="font-label-lg text-on-surface-variant uppercase text-[9px] tracking-wider mb-0.5">Viernes, 31 Octubre</p>
+                                    <h2 class="font-headline-md text-primary-container text-sm font-semibold">Juan Pérez</h2>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-[20px] text-secondary">local_cafe</span>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 flex items-center justify-between gap-3 shadow-sm">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center shrink-0 border border-outline-variant/50">
+                                    <span class="material-symbols-outlined text-on-surface-variant text-[20px]">calendar_month</span>
+                                </div>
+                                <div>
+                                    <p class="font-label-lg text-on-surface-variant uppercase text-[9px] tracking-wider mb-0.5">Viernes, 7 Noviembre</p>
+                                    <h2 class="font-headline-md text-primary-container text-sm font-semibold">Ministerio Alabanza</h2>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-[20px] text-secondary">cake</span>
+                        </div>
+                    </div>
+                </main>
+            </section>
+
+            <!-- VIEW 7: CUMPLEAÑOS -->
+            <section id="view-cumpleanos" class="app-view hidden">
+                <header class="w-full pt-10 pb-4 px-6 flex items-center justify-between relative">
+                    <a href="#/inicio" aria-label="Volver" class="w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity">
+                        <span class="material-symbols-outlined text-ink" style="font-size: 24px;">arrow_back</span>
+                    </a>
+                    <h1 class="font-serif text-xl font-bold tracking-widest text-ink uppercase flex items-center gap-2" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <span class="material-symbols-outlined text-ink" style="font-size: 22px;">cake</span> Cumpleaños
+                    </h1>
+                    <div class="w-8"></div>
+                </header>
+                <div class="editorial-divider mt-0 mb-6" style="height: 1px;"></div>
+                <main class="flex-grow py-6 px-8">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container mb-2">
+                            <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">celebration</span>
+                        </div>
+                        <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary-container text-lg font-bold">Cumpleaños del Mes</h2>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant text-xs mt-1">Celebremos juntos en este mes de Octubre.</p>
+                    </div>
+                    <div class="grid grid-cols-1 gap-3">
+                        <!-- Entry 1 -->
+                        <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/50 p-4 shadow-sm relative overflow-hidden group">
+                            <h3 class="font-headline-md text-primary-container text-sm font-semibold">Ana Martínez</h3>
+                            <p class="font-body-sm text-on-surface-variant flex items-center gap-1.5 text-xs mt-1">
+                                <span class="material-symbols-outlined text-secondary text-base">calendar_today</span>
+                                15 de Octubre
+                            </p>
+                        </div>
+                        <!-- Entry 2 -->
+                        <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/50 p-4 shadow-sm relative overflow-hidden group">
+                            <h3 class="font-headline-md text-primary-container text-sm font-semibold">Carlos Rivera</h3>
+                            <p class="font-body-sm text-on-surface-variant flex items-center gap-1.5 text-xs mt-1">
+                                <span class="material-symbols-outlined text-secondary text-base">calendar_today</span>
+                                18 de Octubre
+                            </p>
+                        </div>
+                        <!-- Entry 3 -->
+                        <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/50 p-4 shadow-sm relative overflow-hidden group">
+                            <h3 class="font-headline-md text-primary-container text-sm font-semibold">Familia López</h3>
+                            <p class="font-body-sm text-on-surface-variant flex items-center gap-1.5 text-xs mt-1">
+                                <span class="material-symbols-outlined text-secondary text-base">calendar_today</span>
+                                22 de Octubre
+                            </p>
+                        </div>
+                    </div>
+                </main>
+            </section>
+
+            <!-- VIEW 7.5: RECREACION INFANTIL -->
+            <section id="view-recreacion" class="app-view hidden">
+                <header class="w-full pt-10 pb-4 px-6 flex items-center justify-between relative">
+                    <a href="#/inicio" aria-label="Volver" class="w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity">
+                        <span class="material-symbols-outlined text-ink" style="font-size: 24px;">arrow_back</span>
+                    </a>
+                    <h1 class="font-serif text-xl font-bold tracking-widest text-ink uppercase flex items-center gap-2" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <span class="material-symbols-outlined text-ink" style="font-size: 22px;">child_care</span> Recreación
+                    </h1>
+                    <div class="w-8"></div>
+                </header>
+                <div class="editorial-divider mt-0 mb-6" style="height: 1px;"></div>
+
+                <main class="flex-grow px-8 pb-10 relative">
+                    <!-- Dynamic List Container -->
+                </main>
+            </section>
+
+            <!-- VIEW 8: VERSÍCULOS DE VIERNES -->
+            <section id="view-versiculos-de-viernes" class="app-view hidden">
+                <header class="w-full pt-10 pb-4 px-6 flex items-center justify-between relative">
+                    <a href="#/inicio" aria-label="Volver" class="w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity">
+                        <span class="material-symbols-outlined text-ink" style="font-size: 24px;">arrow_back</span>
+                    </a>
+                    <h1 class="font-serif text-xl font-bold tracking-widest text-ink uppercase flex items-center gap-2" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <span class="material-symbols-outlined text-ink" style="font-size: 22px;">menu_book</span> Reflexiones
+                    </h1>
+                    <div class="w-8"></div>
+                </header>
+                <div class="editorial-divider mt-0 mb-6" style="height: 1px;"></div>
+                <main class="flex-grow py-6 px-8 space-y-12">
+                    <section class="text-center space-y-1">
+                        <div class="inline-flex justify-center items-center w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container">
+                            <span class="material-symbols-outlined text-2xl" data-icon="auto_awesome">auto_awesome</span>
+                        </div>
+                        <h2 class="font-headline-lg-mobile text-primary text-lg font-semibold">Reflexiones de Viernes</h2>
+                        <p class="font-body-sm text-on-surface-variant text-xs leading-relaxed max-w-[280px] mx-auto">
+                            Tómate un momento para la reflexión y la gracia.
+                        </p>
+                    </section>
+                    <div class="space-y-4">
+                        <!-- Verse 1 -->
+                        <article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 flex flex-col hover:shadow-sm transition-shadow">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-[10px] text-on-tertiary-container bg-surface-container-low px-2 py-0.5 rounded-full uppercase tracking-wider font-semibold">Esperanza</span>
+                                <button aria-label="Bookmark" class="text-on-surface-variant hover:text-primary transition-colors btn-bookmark">
+                                    <span class="material-symbols-outlined text-lg" data-icon="bookmark_border">bookmark_border</span>
+                                </button>
+                            </div>
+                            <h3 class="font-headline-md text-primary font-bold text-sm mb-1">Salmos 23:1</h3>
+                            <blockquote class="font-body-md italic text-on-surface font-light leading-relaxed mb-3 text-xs">
+                                "Jehová es mi pastor; nada me faltará."
+                            </blockquote>
+                            <div class="h-[1px] w-full bg-surface-variant mb-2"></div>
+                            <div class="flex items-center text-secondary text-xs">
+                                <span class="material-symbols-outlined mr-1.5 text-[16px]" data-icon="menu_book" data-weight="fill" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+                                <span class="font-label-md">Leer capítulo completo</span>
+                            </div>
+                        </article>
+                        <!-- Verse 2 -->
+                        <article class="bg-primary text-on-primary rounded-xl p-4 flex flex-col hover:shadow-sm transition-shadow relative overflow-hidden">
+                            <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 100% 0%, #ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+                            <div class="flex justify-between items-start mb-2 relative z-10">
+                                <span class="text-[10px] text-on-primary bg-on-primary/20 px-2 py-0.5 rounded-full uppercase tracking-wider font-semibold backdrop-blur-sm">Fortaleza</span>
+                                <button aria-label="Bookmark" class="text-on-primary hover:opacity-80 transition-opacity btn-bookmark">
+                                    <span class="material-symbols-outlined text-lg" data-icon="bookmark_border">bookmark_border</span>
+                                </button>
+                            </div>
+                            <h3 class="font-headline-md text-on-primary font-bold text-sm mb-1 relative z-10">Filipenses 4:13</h3>
+                            <blockquote class="font-body-md italic text-on-primary font-light leading-relaxed mb-3 text-xs relative z-10">
+                                "Todo lo puedo en Cristo que me fortalece."
+                            </blockquote>
+                            <div class="h-[1px] w-full bg-on-primary/20 mb-2 relative z-10"></div>
+                            <div class="flex items-center text-on-primary opacity-90 text-xs relative z-10">
+                                <span class="material-symbols-outlined mr-1.5 text-[16px]" data-icon="menu_book" data-weight="fill" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+                                <span class="font-label-md">Leer capítulo completo</span>
+                            </div>
+                        </article>
+                    </div>
+                </main>
+            </section>
+
+        </div> <!-- End of viewport -->
+
+        <!-- UNIFIED Fixed BottomNavBar inside the phone wrapper -->
+        <nav id="bottom-nav" class="absolute bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-paper border-t border-ink shadow-[0_-2px_10px_rgba(0,0,0,0.05)] bg-opacity-95 backdrop-blur-md">
+            <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors w-14 h-full rounded-lg" href="#/inicio">
+                <span class="material-symbols-outlined mb-0.5 text-xl" data-icon="home">home</span>
+                <span class="text-[9px] font-semibold">Inicio</span>
+            </a>
+            <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors w-14 h-full rounded-lg" href="#/lista-de-refrigerio">
+                <span class="material-symbols-outlined mb-0.5 text-xl" data-icon="restaurant">restaurant</span>
+                <span class="text-[9px] font-semibold">Vianda</span>
+            </a>
+            <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors w-14 h-full rounded-lg" href="#/actividades">
+                <span class="material-symbols-outlined mb-0.5 text-xl" data-icon="campaign">campaign</span>
+                <span class="text-[9px] font-semibold">Eventos</span>
+            </a>
+            <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors w-14 h-full rounded-lg" href="#/cumpleanos">
+                <span class="material-symbols-outlined mb-0.5 text-xl" data-icon="cake">cake</span>
+                <span class="text-[9px] font-semibold">Cumple</span>
+            </a>
+            <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors w-14 h-full rounded-lg" href="#/versiculos-de-viernes">
+                <span class="material-symbols-outlined mb-0.5 text-xl" data-icon="menu_book">menu_book</span>
+                <span class="text-[9px] font-semibold">Palabra</span>
+            </a>
+        </nav>
+
+    </div> <!-- End of phone-shell -->
+
+    <!-- Script Application -->
+    <script src="js/app.js"></script>
+</body>
+</html>
