@@ -173,7 +173,7 @@ function setupClock() {
 // Google Sheets Fetch Helper
 async function fetchSheetData(sheetName) {
     try {
-        const url = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:json&sheet=${sheetName}`;
+        const url = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(sheetName)}`;
         const response = await fetch(url);
         if (!response.ok) throw new Error('Network response was not ok');
         const text = await response.text();
@@ -230,7 +230,8 @@ async function loadAllData() {
     renderActividades(actividades);
 
     // 4. CUMPLEANOS
-    let cumpleanos = await fetchSheetData('Cumpleanos');
+    let cumpleanos = await fetchSheetData('Cumpleaños');
+    if (!cumpleanos || cumpleanos.length === 0) cumpleanos = await fetchSheetData('Cumpleanos');
     if (!cumpleanos || cumpleanos.length === 0) cumpleanos = FALLBACK_DATA.cumpleanos;
     renderCumpleanos(cumpleanos);
 
@@ -381,11 +382,14 @@ function renderCumpleanos(list) {
     const container = document.querySelector('#view-cumpleanos main');
     if (!container) return;
 
+    const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+    const currentMonth = months[new Date().getMonth()];
+
     let html = `
         <div class="text-center mb-10">
             <span class="font-serif italic text-3xl text-ink">Celebraciones</span>
             <div class="editorial-divider w-12 mx-auto my-3"></div>
-            <span class="font-sans text-xs tracking-widest uppercase text-inkLight">Mes de Octubre</span>
+            <span class="font-sans text-xs tracking-widest uppercase text-inkLight">Mes de ${currentMonth}</span>
         </div>
         <div class="flex flex-col gap-6">
     `;
@@ -605,7 +609,7 @@ function renderRecreacion(list) {
             <div class="flex items-center justify-between group">
                 <div class="flex flex-col">
                     <span class="font-sans text-[10px] tracking-widest uppercase text-inkLight mb-1">${cleanSheetDate(item.fecha || item.date)}</span>
-                    <h2 class="font-serif text-2xl text-ink group-hover:text-sepia transition-colors">${item.nombre || item.name || item.servidor || ''}</h2>
+                    <h2 class="font-serif text-2xl text-ink group-hover:text-sepia transition-colors">${item.nombre || item.name || item.servidor || item.servidores || item.colaborador || item.colaboradores || item.encargados || item.responsable || item.responsables || ''}</h2>
                 </div>
                 <div class="w-10 h-10 border border-ink rounded-full flex items-center justify-center shrink-0 text-ink">
                     <span class="material-symbols-outlined text-[18px]">child_care</span>
